@@ -2,19 +2,12 @@
 #define WEAPON_H
 
 #include <iostream>
+#include "Product.h"
 
-class Weapon {
-private:
-	std::string name;
-	int strength;
+class Weapon : public Product {
 public:
 	Weapon();
 	Weapon(std::string, int);
-	void setName(std::string);
-	void setStrength(int);
-	std::string getName() const;
-	int getStrength() const;
-	friend std::ostream& operator<<(std::ostream&, Weapon&);
 };
 
 #endif

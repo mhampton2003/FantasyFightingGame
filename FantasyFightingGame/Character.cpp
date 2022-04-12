@@ -1,22 +1,27 @@
 #include "Character.h"
-#include "Weapon.h"
+
+void Character::addGold(int gold) {
+	bank += gold;
+	std::cout << "You gained " << gold << " gold!" << std::endl;
+	std::cout << "You now have " << bank << " gold total" << std::endl;
+}
 
 Character::Character()
 {
 	this->name = "";
 	this->health = 0;
-	Weapon weapon;
+	customization->push_back(Product());
 }
 
 Character::Character(std::string name, int health) {
 	this->name = name;
 	this->health = health;
-	Weapon weapon;
+	customization->push_back(Product());
 }
 
 void Character::attack()
 {
-	damage = rand() % 20;
+	damage = rand() % 50;
 	determineHealth(damage);
 }
 

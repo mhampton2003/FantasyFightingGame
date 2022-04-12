@@ -143,15 +143,17 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Arena.cpp" />
     <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="Product.cpp" />
     <ClCompile Include="Store.cpp" />
-    <ClCompile Include="Sword.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arena.h" />
+    <ClInclude Include="Armor.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Hero.h" />
+    <ClInclude Include="Product.h" />
     <ClInclude Include="Store.h" />
     <ClInclude Include="Sword.h" />
     <ClInclude Include="Weapon.h" />

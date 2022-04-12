@@ -2,11 +2,12 @@
 #define STORE_H
 
 #include "Weapon.h"
+#include "Product.h"
 #include <vector>
 
 class Store {
 private:
-	std::vector<Weapon> inventory;
+	std::vector<Product> inventory;
 
 public:
 	Store();

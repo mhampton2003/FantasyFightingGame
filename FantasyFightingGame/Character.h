@@ -3,14 +3,19 @@
 
 #include <iostream>
 #include <random>
+#include <vector>
+#include "Product.h"
 
 class Character {
 private:
 	int damage;
 	int health;
 	std::string name;
+	int bank = 0;
+	std::vector<Product> customization[2];
 
 public:
+	void addGold(int);
 	Character();
 	Character(std::string, int);
 	void attack();

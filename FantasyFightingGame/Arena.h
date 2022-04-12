@@ -6,30 +6,44 @@
 #include "Store.h"
 
 class Arena {
+private:
+	bool playAgain;
 public:
 	Arena();
 	void start();
-	Store store;
-	store.showInventory();
 };
 
 Arena::Arena() {}
 
 void Arena::start() {
-	Hero player("p1", 100);
-	Enemy enemy("p2", 100);
 
-	while (!player.isDead() && !enemy.isDead()) {
-		enemy.attack();
-		player.attack();
+	do {
+		Hero player("p1", 100);
+		Enemy enemy("p2", 100);
 
-		if (player.isDead()) {
-			std::cout << "your hero has fallen" << std::endl;
+		while (!player.isDead() && !enemy.isDead()) {
+			player.attack();
+			enemy.attack();
+
+			if (player.isDead()) {
+				std::cout << "your hero has fallen" << std::endl;
+			}
+			if (enemy.isDead()) {
+				std::cout << "you defeated the enemy" << std::endl;
+				player.addGold(10);
+			}
 		}
-		if (enemy.isDead()) {
-			std::cout << "you defeated the enemy" << std::endl;
+
+		std::cout << "Would you like to play again?" << std::endl;
+		int input;
+		std::cin >> input;
+		if (input == 1) {
+			playAgain = true;
 		}
-	}
+		else {
+			playAgain = false;
+		}
+	} while (playAgain);
 }
 
 #endif

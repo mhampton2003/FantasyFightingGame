@@ -11,6 +11,7 @@ private:
 public:
 	Enemy();
 	Enemy(std::string, int);
+	void attack();
 };
 
 #endif

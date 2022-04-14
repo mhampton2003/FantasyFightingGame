@@ -7,7 +7,8 @@
 class Weapon : public Product {
 public:
 	Weapon();
-	Weapon(std::string, int);
+	Weapon(std::string, int, int);
+	std::string getType();
 };
 
 #endif

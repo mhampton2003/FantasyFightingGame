@@ -11,14 +11,13 @@ private:
 	int damage;
 	int health;
 	std::string name;
-	int bank = 0;
-	std::vector<Product> customization[2];
 
 public:
-	void addGold(int);
+	void getCustomization();
+	Product customization[3];
 	Character();
 	Character(std::string, int);
-	void attack();
+	virtual void attack() = 0;
 	bool isDead();
 	void determineHealth(int);
 	int getDamage() const;

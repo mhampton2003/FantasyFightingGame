@@ -11,6 +11,7 @@ private:
 public:
 	Hero();
 	Hero(std::string, int);
+	void attack();
 };
 
 #endif

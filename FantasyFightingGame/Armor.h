@@ -5,25 +5,27 @@
 
 class Armor : public Product {
 private:
-	int defense;
+
 public:
 	Armor();
-	Armor(std::string, int);
-	void setDefense(int);
+	Armor(std::string, int, int);
+	std::string getType();
 };
+
+std::string Armor::getType() {
+	return "armor";
+}
 
 Armor::Armor() {
 	setName("");
 	setDefense(0);
+	setPrice(0);
 }
 
-Armor::Armor(std::string name, int defense) {
+Armor::Armor(std::string name, int defense, int price) {
 	setName(name);
 	setDefense(defense);
-}
-
-void Armor::setDefense(int defense) {
-	this->defense = defense;
+	setPrice(price);
 }
 
 #endif

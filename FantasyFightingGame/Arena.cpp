@@ -3,10 +3,14 @@
 #include "Arena.h"
 
 int main() {
-	Arena arena;
-	arena.start();
-	Store store;
-	//store.showInventory();
+	//Character h;
+	//h.getCustomization();
+	Arena a;
+	a.start();
+	//Store s;
+	//s.start(h);
+
+
 
 	return 0;
 }

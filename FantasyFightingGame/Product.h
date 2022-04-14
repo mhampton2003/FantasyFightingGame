@@ -20,8 +20,9 @@ public:
 	int getStrength() const;
 	int getDefense() const;
 	int getPrice() const;
-	virtual std::string getType();
-	friend std::ostream& operator<<(std::ostream&, Product&);
+	virtual std::string getType() = 0;
+	friend std::ostream& operator<<(std::ostream&, Product*&);
+	~Product();
 };
 
 #endif

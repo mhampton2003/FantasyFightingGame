@@ -1,7 +1,7 @@
 #include "Product.h"
 
-std::string Product::getType() {
-	return "product";
+Product::~Product() {
+
 }
 
 Product::Product() {
@@ -52,18 +52,20 @@ int Product::getPrice() const {
 	return this->price;
 }
 
-std::ostream& operator<<(std::ostream& out, Product& rhs)
+std::ostream& operator<<(std::ostream& out, Product*& rhs)
 {
-	if (rhs.getType() == "weapon") {
-		out << "Name: " << rhs.name << "\n" << "Strength: " << rhs.strength << "\n" << "Price: " << rhs.price;
+	std::cout << rhs->getType() << std::endl;
+
+	if (rhs->getType() == "weapon") {
+		out << "Name: " << rhs->name << "\n" << "Strength: " << rhs->strength << "\n" << "Price: " << rhs->price;
 	}
-	else if (rhs.getType() == "armor") {
-		out << "Name: " << rhs.name << "\n" << " Defense: " << rhs.defense << "\n" << "Price: " << rhs.defense;
+	else if (rhs->getType() == "armor") {
+		out << "Name: " << rhs->name << "\n" << " Defense: " << rhs->defense << "\n" << "Price: " << rhs->defense;
 	}
-	else if (rhs.getType() == "potion") {
-		out << "Name: " << rhs.name << "\n" << "Price: " << rhs.price;
+	else if (rhs->getType() == "potion") {
+		out << "Name: " << rhs->name << "\n" << "Price: " << rhs->price;
 	}
-	else if (rhs.getType() == "potion") {
+	else if (rhs->getType() == "potion") {
 		out << "product";
 	}
 	else {

@@ -11,13 +11,18 @@ private:
 	int damage;
 	int health;
 	std::string name;
+	int bank = 0;
 
 public:
+	void addBP(int);
+	int getBank() const;
+	void setBank(int);
+
 	void getCustomization();
-	Product customization[3];
+	Product* customization[3];
 	Character();
 	Character(std::string, int);
-	virtual void attack() = 0;
+	virtual void attack(Character&) = 0;
 	bool isDead();
 	void determineHealth(int);
 	int getDamage() const;
@@ -26,6 +31,7 @@ public:
 	void setDamage(int);
 	void setHealth(int);
 	void setName(std::string);
+	~Character();
 };
 
 

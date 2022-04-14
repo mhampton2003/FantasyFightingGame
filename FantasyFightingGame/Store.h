@@ -14,9 +14,10 @@ private:
 public:
 	Store();
 	void start(Hero&);
-	void sell();
-	void buy();
+	void sell(Hero&);
+	void buy(Hero&, Product*&);
 	void showInventory();
+	~Store();
 };
 
 #endif;

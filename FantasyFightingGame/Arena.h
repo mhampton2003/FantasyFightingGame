@@ -11,15 +11,7 @@ private:
 public:
 	Arena();
 	void start();
-	void addBP(int);
-	int bank = 0;
 };
-
-void Arena::addBP(int bp) {
-	bank += bp;
-	std::cout << "You gained " << bp << " brownie points!" << std::endl;
-	std::cout << "You now have " << bank << " brownie points total" << std::endl;
-}
 
 Arena::Arena() {}
 
@@ -28,26 +20,24 @@ void Arena::start() {
 	int start;
 	std::cin >> start;
 	if (start == 0) {
-		do {
-			Hero player("p1", 100);
-			Enemy enemy("marsh", 100);
+		Hero player("p1", 100);
+		Enemy enemy("marsh", 100);
 
-			/*
-			std::cout << player.customization[0] << std::endl;
-			std::cout << player.customization[1] << std::endl;
-			std::cout << player.customization[2] << std::endl;
-			*/
+		do {
+
+			player.setHealth(100);
+			enemy.setHealth(100);
 
 			while (!player.isDead() && !enemy.isDead()) {
-				player.attack();
-				enemy.attack();
+				player.attack(enemy);
+				enemy.attack(player);
 
 				if (player.isDead()) {
 					std::cout << "your hero has fallen" << std::endl;
 				}
 				if (enemy.isDead()) {
 					std::cout << "you defeated the marshmallow!" << std::endl;
-					addBP(10);
+					player.addBP(10);
 				}
 			}
 
@@ -63,12 +53,26 @@ void Arena::start() {
 			else if (input == 2) {
 				Store s;
 				s.start(player);
+				std::cout << "Re enter the cafeteria?" << std::endl;
+				std::cout << "[1] Yes" << std::endl;
+				std::cout << "[2] No" << std::endl;
+				int cont;
+				std::cin >> cont;
+				if (cont == 1) {
+					playAgain = true;
+				}
+				else if (cont == 2) {
+					playAgain = false;
+				}
+				else {
+					std::cout << "There was an error with your selection" << std::endl;
+				}
 			}
 			else if (input == 0) {
 				playAgain = false;
 			}
 			else {
-				std::cout << "Error in restarting" << std::endl;
+				std::cout << "Continue error" << std::endl;
 			}
 		} while (playAgain);
 	}

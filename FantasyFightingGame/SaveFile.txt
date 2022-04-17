@@ -1,0 +1,10 @@
+p1
+sword
+8
+10
+helmet
+5
+20
+health
+50
+60

@@ -60,12 +60,12 @@ std::ostream& operator<<(std::ostream& out, Product*& rhs)
 		out << "Name: " << rhs->name << "\n" << "Strength: " << rhs->strength << "\n" << "Price: " << rhs->price;
 	}
 	else if (rhs->getType() == "armor") {
-		out << "Name: " << rhs->name << "\n" << " Defense: " << rhs->defense << "\n" << "Price: " << rhs->defense;
+		out << "Name: " << rhs->name << "\n" << "Defense: " << rhs->defense << "\n" << "Price: " << rhs->defense;
 	}
 	else if (rhs->getType() == "potion") {
 		out << "Name: " << rhs->name << "\n" << "Price: " << rhs->price;
 	}
-	else if (rhs->getType() == "potion") {
+	else if (rhs->getType() == "product") {
 		out << "product";
 	}
 	else {
